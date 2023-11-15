@@ -178,6 +178,43 @@
         </inertial>
     </link>
 
+         <link name="long">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.2"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+    </link>
+    
+    
+      <joint name="add_long" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="long"/>
+    	<origin rpy="0 0 0" xyz="0 0 0.138"/>
+  </joint>
+  
+      
+         <link name="shar">
+        <visual>
+            <geometry>
+               <sphere radius="0.2"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+    </link>
+    
+    
+      <joint name="add_shar" type="fixed">
+    	<parent link="long"/>
+    	<child link="shar"/>
+    	<origin rpy="0 0 0" xyz="0 0 0.3"/>
+  </joint>
+
+
+
     <gazebo reference="caster_wheel">
         <material>Gazebo/White</material>
         <mu1 value="0.001"/>
